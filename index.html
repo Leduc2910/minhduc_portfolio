@@ -6856,42 +6856,6 @@
       preserveQueryParams: undefined,
       siteCanonicalURL: "https://loud-development-395615.framer.app",
       EditorBar: typeof window !== "undefined" ? ( () => {
-                const isBot = /bot|-google|google-|yandex|ia_archiver|crawl|spider/iu.test(navigator.userAgent)
-                if (isBot) {
-                  console.log("[Framer Editor Bar] Unavailable because navigator is bot")
-                  return
-                }
-
-                return Framer.lazy(async () => {
-                          const dependencies = {
-                            __version: 2,
-                            framer: {
-                              useCurrentRoute: Framer.useCurrentRoute,
-                              useLocaleInfo: Framer.useLocaleInfo,
-                              useRouter: Framer.useRouter,
-                            },
-                            react: {
-                              createElement: React.createElement,
-                              Fragment: React.Fragment,
-                              memo: React.memo,
-                              useCallback: React.useCallback,
-                              useEffect: React.useEffect,
-                              useRef: React.useRef,
-                              useState: React.useState,
-                            },
-                            "react-dom": {
-                              createPortal
-                            },
-                          }
-
-                          window.__framer_editorBarDependencies = dependencies
-
-                          const {createEditorBar} = await import("https://framer.com/edit/init.mjs")
-                          return {
-                            default: createEditorBar(),
-                          }
-                        }
-                )
               }
       )() : undefined,
       LayoutTemplate: Template,
@@ -7141,7 +7105,6 @@
           }
   )()
 </script>
-<!-- Start of bodyEnd -->
-<!-- End of bodyEnd -->
+
 </body>
 </html>
